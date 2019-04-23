@@ -27,8 +27,8 @@ public class AppTest
     
     @org.junit.Test
     public void cdShouldNotBeNull() {
-    	System.out.println("Hola");
     	assertNotNull(disk);
+    	disk.play();
     }
     
     @org.junit.Test

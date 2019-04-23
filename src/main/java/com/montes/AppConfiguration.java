@@ -10,10 +10,11 @@ import com.montes.beans.impl.CDPlayer;
 import com.montes.beans.impl.CowboysFromHell;
 import com.montes.beans.impl.VulgarDisplayOfPower;
 
-@Configuration
+//@Configuration
 //@ComponentScan
 public class AppConfiguration {
 	
+	/*
 	@Bean
 	@Profile("dev")
 	public CompactDisk cowboys() {
@@ -30,5 +31,5 @@ public class AppConfiguration {
 	public MediaPlayer cdPlayer (CompactDisk compactDisk) {
 		return new CDPlayer(compactDisk);
 	}
-
+*/
 }

@@ -1,10 +1,16 @@
 package com.montes.beans.impl;
 
 
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
+import org.springframework.beans.factory.config.BeanPostProcessor;
+import org.springframework.stereotype.Component;
+
 import com.montes.beans.CompactDisk;
 
-//@Component
-public class VulgarDisplayOfPower implements CompactDisk {
+@Component
+public class VulgarDisplayOfPower implements CompactDisk, BeanPostProcessor, InitializingBean, DisposableBean {
 
 	private String title = "Vulgar Display of Power";
 	private String artist = "Pantera";
@@ -12,6 +18,30 @@ public class VulgarDisplayOfPower implements CompactDisk {
 	public void play() {
 		System.out.println("Paying " + title + " by " + artist);
 		
+	}
+
+	public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
+		System.out.println("postProcessBeforeInitialization " + beanName);
+		return null;
+	}
+
+	public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
+		System.out.println("postProcessAfterInitialization " + beanName);
+		return null;
+	}
+
+	public void afterPropertiesSet() throws Exception {
+		System.out.println("afterPropertiesSet");
+		
+	}
+
+	public void destroy() throws Exception {
+		System.out.println("destroy");
+		
+	}
+	
+	public void init() {
+		System.out.println("init");
 	}
 	
 

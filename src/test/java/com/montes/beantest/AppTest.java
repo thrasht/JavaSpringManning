@@ -16,7 +16,8 @@ import com.montes.beans.MediaPlayer;
  * Unit test for simple App.
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes=com.montes.AppConfiguration.class)
+//@ContextConfiguration(classes=com.montes.AppConfiguration.class)
+@ContextConfiguration(locations = "file:src/main/resources/application-context.xml")
 @ActiveProfiles("qa")
 public class AppTest 
 {

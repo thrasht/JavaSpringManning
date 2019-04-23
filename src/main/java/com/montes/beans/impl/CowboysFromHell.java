@@ -1,5 +1,7 @@
 package com.montes.beans.impl;
 
+import org.springframework.stereotype.Component;
+
 import com.montes.beans.CompactDisk;
 
 public class CowboysFromHell implements CompactDisk{

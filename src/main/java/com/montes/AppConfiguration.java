@@ -2,6 +2,7 @@ package com.montes;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 
 import com.montes.beans.CompactDisk;
 import com.montes.beans.MediaPlayer;
@@ -14,19 +15,15 @@ import com.montes.beans.impl.VulgarDisplayOfPower;
 public class AppConfiguration {
 	
 	@Bean
-	public CompactDisk randomPanteraDisk() {
-		int choice = (int) Math.floor(Math.random() * 2);
-		
-		switch(choice) {
-			case 0:
-				return new CowboysFromHell();
-			case 1:
-				return new VulgarDisplayOfPower();
-				
-			default:
-				return null;
-		}
-		
+	@Profile("dev")
+	public CompactDisk cowboys() {
+		return new CowboysFromHell();		
+	}
+	
+	@Bean
+	@Profile("qa")
+	public CompactDisk vulgar() {
+		return new VulgarDisplayOfPower();
 	}
 	
 	@Bean

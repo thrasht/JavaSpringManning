@@ -9,7 +9,6 @@ import org.springframework.stereotype.Component;
 
 import com.montes.beans.CompactDisk;
 
-@Component
 public class VulgarDisplayOfPower implements CompactDisk, BeanPostProcessor, InitializingBean, DisposableBean {
 
 	private String title = "Vulgar Display of Power";
@@ -22,12 +21,12 @@ public class VulgarDisplayOfPower implements CompactDisk, BeanPostProcessor, Ini
 
 	public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
 		System.out.println("postProcessBeforeInitialization " + beanName);
-		return null;
+		return bean;
 	}
 
 	public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
 		System.out.println("postProcessAfterInitialization " + beanName);
-		return null;
+		return bean;
 	}
 
 	public void afterPropertiesSet() throws Exception {

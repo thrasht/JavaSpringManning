@@ -4,6 +4,7 @@ import org.springframework.stereotype.Component;
 
 import com.montes.beans.CompactDisk;
 
+
 public class CowboysFromHell implements CompactDisk{
 
 	private String title = "Cowboys From Hell";

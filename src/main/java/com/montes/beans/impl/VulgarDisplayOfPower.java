@@ -5,10 +5,14 @@ import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.config.BeanPostProcessor;
+import org.springframework.context.annotation.Conditional;
 import org.springframework.stereotype.Component;
 
 import com.montes.beans.CompactDisk;
+import com.montes.conditionals.DiscCondition;
 
+@Component
+@Conditional(DiscCondition.class)
 public class VulgarDisplayOfPower implements CompactDisk, BeanPostProcessor, InitializingBean, DisposableBean {
 
 	private String title = "Vulgar Display of Power";

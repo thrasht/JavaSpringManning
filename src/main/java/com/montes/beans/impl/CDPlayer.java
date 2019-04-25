@@ -1,6 +1,7 @@
 package com.montes.beans.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import com.montes.beans.CompactDisk;
@@ -12,6 +13,8 @@ public class CDPlayer implements MediaPlayer{
 	CompactDisk cd;
 	
 	
+	@Autowired
+	@Qualifier("vulgarDisplayOfPower")
 	public void setCompactDisk(CompactDisk cd) {
 		this.cd = cd;
 	}

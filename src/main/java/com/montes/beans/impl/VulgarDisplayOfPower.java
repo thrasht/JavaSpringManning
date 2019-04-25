@@ -9,9 +9,15 @@ import org.springframework.context.annotation.Conditional;
 import org.springframework.stereotype.Component;
 
 import com.montes.beans.CompactDisk;
+import com.montes.beans.qualifiers.Pantera;
+import com.montes.beans.qualifiers.Thrash;
+import com.montes.beans.qualifiers.Vulgar;
 import com.montes.conditionals.DiscCondition;
 
 @Component
+@Thrash
+@Pantera
+@Vulgar
 @Conditional(DiscCondition.class)
 public class VulgarDisplayOfPower implements CompactDisk, BeanPostProcessor, InitializingBean, DisposableBean {
 

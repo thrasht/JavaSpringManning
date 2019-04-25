@@ -10,6 +10,9 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.montes.beans.CompactDisk;
 import com.montes.beans.MediaPlayer;
+import com.montes.beans.qualifiers.Cowboys;
+import com.montes.beans.qualifiers.Pantera;
+import com.montes.beans.qualifiers.Thrash;
 
 
 /**
@@ -25,6 +28,9 @@ public class AppTest
 	private MediaPlayer player;
 	
 	@Autowired
+	@Thrash
+	@Pantera
+	@Cowboys
 	private CompactDisk disk;
    
     

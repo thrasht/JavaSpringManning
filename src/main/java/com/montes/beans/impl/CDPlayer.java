@@ -6,6 +6,9 @@ import org.springframework.stereotype.Component;
 
 import com.montes.beans.CompactDisk;
 import com.montes.beans.MediaPlayer;
+import com.montes.beans.qualifiers.Pantera;
+import com.montes.beans.qualifiers.Thrash;
+import com.montes.beans.qualifiers.Vulgar;
 
 
 public class CDPlayer implements MediaPlayer{
@@ -13,12 +16,11 @@ public class CDPlayer implements MediaPlayer{
 	CompactDisk cd;
 	
 	
-	@Autowired
-	@Qualifier("vulgarDisplayOfPower")
-	public void setCompactDisk(CompactDisk cd) {
-		this.cd = cd;
-	}
 	
+	
+	@Thrash
+	@Pantera
+	@Vulgar
 	public CDPlayer(CompactDisk cd) {
 		this.cd = cd;
 	}

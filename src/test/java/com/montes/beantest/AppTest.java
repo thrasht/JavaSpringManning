@@ -4,6 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 import org.springframework.test.context.ActiveProfiles;
@@ -28,6 +29,9 @@ import com.montes.beans.qualifiers.Thrash;
 @ActiveProfiles("qa")
 public class AppTest 
 {
+	@Value("${test.p}")
+	String propertyValue;
+	
 	@Autowired
 	private MediaPlayer player;
 	
@@ -42,6 +46,7 @@ public class AppTest
    
 	@org.junit.Test
     public void playAgain() {
+		
     	CDPlayer cd = (CDPlayer)player;
     	CowboysFromHell c = (CowboysFromHell)cd.cd;
     	c.setTitle("Otro nombre");
@@ -52,12 +57,16 @@ public class AppTest
     
     @org.junit.Test
     public void cdShouldNotBeNull() {
+    	
+    	
+    	
     	assertNotNull(disk);
     	
     	CowboysFromHell c = (CowboysFromHell)disk;
     	disk.play();
     	c.setTitle("Slaughter modified");
     	disk.play();
+    	System.out.println("Variable de prueba en properties leída con @Value: " + propertyValue);
     	
     }
     

@@ -11,8 +11,8 @@ import com.montes.beans.impl.CDPlayer;
 import com.montes.beans.impl.CowboysFromHell;
 import com.montes.beans.impl.VulgarDisplayOfPower;
 
-@Configuration
-@PropertySource("classpath:/com/montes/resources/application.properties")
+//@Configuration
+//@PropertySource("file:src/main/resources/application.properties")
 //@ComponentScan
 public class AppConfiguration {
 	

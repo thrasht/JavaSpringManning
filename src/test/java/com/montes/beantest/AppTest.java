@@ -4,6 +4,8 @@ import static org.junit.Assert.*;
 
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.core.env.Environment;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -34,6 +36,9 @@ public class AppTest
 	@Pantera
 	@Cowboys
 	private CompactDisk disk;
+	
+	@Autowired
+	Environment env;
    
 	@org.junit.Test
     public void playAgain() {
@@ -41,6 +46,7 @@ public class AppTest
     	CowboysFromHell c = (CowboysFromHell)cd.cd;
     	c.setTitle("Otro nombre");
 		player.play();
+		System.out.println("Variable de prueba en properties: " + env.getProperty("test.p"));
     	
     }
     

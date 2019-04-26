@@ -10,6 +10,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.montes.beans.CompactDisk;
 import com.montes.beans.MediaPlayer;
+import com.montes.beans.impl.CDPlayer;
+import com.montes.beans.impl.CowboysFromHell;
 import com.montes.beans.qualifiers.Cowboys;
 import com.montes.beans.qualifiers.Pantera;
 import com.montes.beans.qualifiers.Thrash;
@@ -33,11 +35,24 @@ public class AppTest
 	@Cowboys
 	private CompactDisk disk;
    
+	@org.junit.Test
+    public void playAgain() {
+    	CDPlayer cd = (CDPlayer)player;
+    	CowboysFromHell c = (CowboysFromHell)cd.cd;
+    	c.setTitle("Otro nombre");
+		player.play();
+    	
+    }
     
     @org.junit.Test
     public void cdShouldNotBeNull() {
     	assertNotNull(disk);
+    	
+    	CowboysFromHell c = (CowboysFromHell)disk;
     	disk.play();
+    	c.setTitle("Slaughter modified");
+    	disk.play();
+    	
     }
     
     @org.junit.Test

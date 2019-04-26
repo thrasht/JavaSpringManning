@@ -29,8 +29,8 @@ import com.montes.beans.qualifiers.Thrash;
 @ActiveProfiles("qa")
 public class AppTest 
 {
-	@Value("${test.p}")
-	String propertyValue;
+	@Value("#{systemProperties['file.separator']}")
+	private String propertyValue;
 	
 	@Autowired
 	private MediaPlayer player;

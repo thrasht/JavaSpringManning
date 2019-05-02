@@ -14,7 +14,6 @@ import com.montes.beans.qualifiers.Thrash;
 import com.montes.beans.qualifiers.Vulgar;
 import com.montes.conditionals.DiscCondition;
 
-@Component
 @Thrash
 @Pantera
 @Vulgar
@@ -51,6 +50,12 @@ public class VulgarDisplayOfPower implements CompactDisk, BeanPostProcessor, Ini
 	
 	public void init() {
 		System.out.println("init");
+	}
+
+	@Override
+	public void playTrack(int trackNumber) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 

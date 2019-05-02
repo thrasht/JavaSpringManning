@@ -10,7 +10,6 @@ import com.montes.beans.qualifiers.Cowboys;
 import com.montes.beans.qualifiers.Pantera;
 import com.montes.beans.qualifiers.Thrash;
 
-@Component
 @Thrash
 @Pantera
 @Cowboys
@@ -31,6 +30,12 @@ public class CowboysFromHell implements CompactDisk{
 
 	public void setTitle(String title) {
 		this.title = title;
+	}
+
+	@Override
+	public void playTrack(int trackNumber) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 	
